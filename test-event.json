@@ -1,0 +1,7 @@
+{
+  "timestamp": "2024-03-15T14:30:00Z",
+  "user_id": "usr_test1",
+  "event_type": "page_view",
+  "page_url": "/home",
+  "session_id": "sess_test1"
+}
