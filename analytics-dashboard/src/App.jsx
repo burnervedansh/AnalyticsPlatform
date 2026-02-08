@@ -39,9 +39,9 @@ function App() {
         fetchData();
     }, []);
 
-    // Auto-refresh every 5 seconds
+    // Auto-refresh every 30 seconds
     useEffect(() => {
-        const interval = setInterval(fetchData, 5000);
+        const interval = setInterval(fetchData, 30000);
         return () => clearInterval(interval);
     }, []);
 

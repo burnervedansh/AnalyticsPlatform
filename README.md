@@ -1,11 +1,11 @@
 # E-Commerce Real-Time Analytics Platform
 
-A real-time analytics system that processes 50+ events per second and provides instant insights through a modern dashboard.
+A real-time analytics system that processes 100+ events per second and provides instant insights through a modern dashboard.
 
 ## Overview
 
 This platform simulates and analyzes e-commerce user behavior in real-time, providing metrics on:
-- **Active Users** - Count of users active in last 5 minutes (800-1000, updates every 5 seconds)
+- **Active Users** - Count of users active in last 5 minutes (800-1000, updates every 30 seconds)
 - **Top Pages** - Most visited pages in last 15 minutes
 - **Active Sessions** - Most recent Users with multiple concurrent sessions
 
@@ -53,7 +53,7 @@ Wait 15-20 seconds, then open: **http://localhost:5173**
 
 - ⚡ **Real-Time Processing** - Metrics updated every 10 seconds
 - 🔒 **Rate Limiting** - Token bucket (100 events/sec)
-- 📊 **Live Dashboard** - Auto-refresh every 5 seconds
+- 📊 **Live Dashboard** - Auto-refresh every 30 seconds
 - 🎨 **Modern UI** - Dark theme, responsive design
 - 🐳 **Docker Ready** - Containerized infrastructure
 - 📝 **Well Documented** - Complete guides and API docs

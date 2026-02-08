@@ -11,7 +11,7 @@ High-level design and data flow for the E-Commerce Real-Time Analytics Platform.
 │ Event Generator │ (Simulates user activity)
 └────────┬────────┘
          │ HTTP POST
-         │ 50 events/sec
+         │ 100 events/sec
          ▼
 ┌─────────────────────────────────────────────────────────┐
 │              Backend API (Spring Boot)                  │
@@ -70,7 +70,7 @@ High-level design and data flow for the E-Commerce Real-Time Analytics Platform.
 **Technology:** Java 17, Spring Boot
 
 **Key Features:**
-- Generates 50 events per second
+- Generates 100 events per second
 - Dynamic user pool: 800-1000 users (changes every 5 seconds)
 - Random session generation: 1-3 sessions per user
 - Varied event types: page_view, click, add_to_cart, etc.
@@ -131,7 +131,7 @@ High-level design and data flow for the E-Commerce Real-Time Analytics Platform.
 - `createdAt` (for time-based queries)
 - `userId` (for user-specific queries)
 
-**Retention:** Events older than 30 days are cleaned up (scheduled daily at 2 AM).
+**Retention:** Events older than 24 hours are cleaned up (scheduled daily at 2 AM).
 
 #### 2.4 Real-Time Processor
 
@@ -214,7 +214,7 @@ High-level design and data flow for the E-Commerce Real-Time Analytics Platform.
    - Shows userId, session count, session IDs
 
 **Auto-Refresh:**
-- Interval: 5 seconds
+- Interval: 30 seconds
 - Fetches all metrics simultaneously
 - Updates "Last updated" timestamp
 
@@ -262,7 +262,7 @@ High-level design and data flow for the E-Commerce Real-Time Analytics Platform.
 ### Dashboard Query Flow
 
 ```
-1. Frontend timer triggers (every 5s)
+1. Frontend timer triggers (every 30s)
    ↓
 2. Parallel API calls:
    - GET /api/analytics/active-users
@@ -285,9 +285,9 @@ High-level design and data flow for the E-Commerce Real-Time Analytics Platform.
 ### Current Limits
 
 - **Event ingestion:** 100 events/second (rate limited)
-- **Event generation:** 50 events/second
+- **Event generation:** 100 events/second
 - **Processing frequency:** Every 10 seconds
-- **Dashboard refresh:** Every 5 seconds
+- **Dashboard refresh:** Every 30 seconds
 
 ### Bottlenecks
 

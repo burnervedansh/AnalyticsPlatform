@@ -37,7 +37,7 @@ Content-Type: application/json
 - `page_url` (string, required): URL of the page
 - `session_id` (string, required): Session identifier
 
-**Success Response (200 OK):**
+**Success Response (201 Created):**
 ```json
 {
   "status": "success",
@@ -286,7 +286,7 @@ GET /api/analytics/recent-sessions?limit=5
 The event generator is an internal service that sends events to the backend. It does not expose public APIs for external consumption.
 
 **Configuration:**
-- Events per second: 50
+- Events per second: 100
 - User pool size: 800-1000 (changes every 5 seconds)
 - Target: `POST http://localhost:8080/api/events`
 
@@ -327,7 +327,7 @@ All functions throw errors on failure. The dashboard displays:
 ```
 
 **Auto-Refresh:**
-- Interval: 5 seconds
+- Interval: 30 seconds
 - All metrics refresh automatically
 
 ---

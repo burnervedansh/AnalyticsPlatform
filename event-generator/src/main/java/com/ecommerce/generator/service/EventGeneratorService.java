@@ -67,10 +67,10 @@ public class EventGeneratorService {
     }
 
     /**
-     * Generate and send events at approximately 50 events per second.
-     * Fixed delay of 20ms = 1000ms / 50 events = 50 events/second
+     * Generate and send events at approximately 100 events per second.
+     * Fixed delay of 10ms = 1000ms / 100 events = 100 events/second
      */
-    @Scheduled(fixedDelay = 20)
+    @Scheduled(fixedDelay = 10)
     public void generateAndSendEvent() {
         if (!config.isEnabled()) {
             return;
